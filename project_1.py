@@ -43,15 +43,24 @@ class OnlineSalesRegisterCollector:
 
     def twenty_percent_tax_calculation(self):
         twenty_percent_tax = []
-        #if rate in self.__tax_rate.values():
         for item in self.__name_items:
             if self.__tax_rate[item] == 20:
                 twenty_percent_tax.append(self.__item_price[item])
 
         total = []
         for item in twenty_percent_tax:
-            total.append(item * 0.2)
-            if len(total) > 10:
-                return sum(total) * 0.9
-            else:
-                return sum(total)
+            total.append(item)
+            lambda total: sum(total) * 0,2 * 0,1  if len(total) > 10 else sum(total) * 0,2
+           
+
+    def ten_percent_tax_calculation(self):
+        ten_percent_tax = []
+
+        for item in self.__name_items:
+            if self.__tax_rate[item] == 10:
+                ten_percent_tax.append(self.__item_price[item])
+
+        total = []
+        for item in ten_percent_tax:
+            total.append(item)
+            lambda total: sum(total) * 0,1 * 0,1 if len(total) > 10 else sum(total) * 0,1
