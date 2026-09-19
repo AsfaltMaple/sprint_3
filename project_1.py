@@ -64,3 +64,6 @@ class OnlineSalesRegisterCollector:
         for item in ten_percent_tax:
             total.append(item)
             lambda total: sum(total) * 0,1 * 0,1 if len(total) > 10 else sum(total) * 0,1
+
+    def total_tax(self):
+        return self.twenty_percent_tax_calculation() + self.ten_percent_tax_calculation()
