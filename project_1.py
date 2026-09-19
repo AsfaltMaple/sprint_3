@@ -16,3 +16,12 @@ class OnlineSalesRegisterCollector:
     def number_items(self):
         return self.__number_items
 
+    def add_item_to_cheque(self, name):
+        if len(name) == 0 or len(name) > 40:
+            raise ValueError("Нельзя добавить товар, если в его названии нет символов или их больше 40")
+        elif name not in self.__name_items:
+            raise NameError("Позиция отсутствует в товарном справочнике")
+        else:
+            self.__name_items.append(name)
+            self.__number_items += 1
+
