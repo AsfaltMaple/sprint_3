@@ -40,3 +40,18 @@ class OnlineSalesRegisterCollector:
             return sum(total) * 0.9
         else:
             return sum(total)
+
+    def twenty_percent_tax_calculation(self):
+        twenty_percent_tax = []
+        #if rate in self.__tax_rate.values():
+        for item in self.__name_items:
+            if self.__tax_rate[item] == 20:
+                twenty_percent_tax.append(self.__item_price[item])
+
+        total = []
+        for item in twenty_percent_tax:
+            total.append(item * 0.2)
+            if len(total) > 10:
+                return sum(total) * 0.9
+            else:
+                return sum(total)
